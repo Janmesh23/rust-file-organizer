@@ -1,0 +1,33 @@
+[package]
+name = "file-organizer"
+version = "0.1.0"
+edition = "2021"
+authors = ["Janmesh Shewale <worksjanmesh@gmail.com>"]
+description = "A powerful CLI tool to organize files by type, size, date, or custom rules"
+license = "MIT"
+repository = "https://github.com/Janmesh23/rust-file-organizer"
+keywords = ["cli", "file-organizer", "filesystem", "automation", "rust"]
+categories = ["command-line-utilities", "filesystem"]
+readme = "README.md"
+
+[[bin]]
+name = "file-organizer"
+path = "src/main.rs"
+
+[dependencies]
+# CLI argument parsing
+clap = { version = "4.0", features = ["derive"] }
+# Error handling
+anyhow = "1.0"
+# Serialization for config files
+serde = { version = "1.0", features = ["derive"] }
+toml = "0.8"
+# File system operations
+walkdir = "2.3"
+# Date/time handling
+chrono = { version = "0.4", features = ["serde"] }
+# Colored terminal output
+colored = "2.0"
+# Logging
+log = "0.4"
+env_logger = "0.10"
