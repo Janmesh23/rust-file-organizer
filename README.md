@@ -125,7 +125,15 @@ medium = "100MB"
 patterns = [".git", "node_modules", "*.tmp"]
 ```
 
-## 🔧 Development
+## 📚 Documentation
+
+Comprehensive documentation is available in the `docs/` directory:
+
+- **[📖 Code Walkthrough](docs/CODE_WALKTHROUGH.md)** - Line-by-line explanation of every file
+- **[🔧 Build & Run Guide](docs/BUILD_AND_RUN.md)** - Complete guide to building and running the project
+- **[🦀 Rust Concepts](docs/RUST_CONCEPTS.md)** - Explanation of all Rust concepts used in the project
+
+## 🔧 Quick Start
 
 ### Prerequisites
 - Rust 1.70.0 or higher
@@ -135,17 +143,27 @@ patterns = [".git", "node_modules", "*.tmp"]
 ```bash
 git clone https://github.com/Janmesh23/rust-file-organizer.git
 cd rust-file-organizer
-cargo build
+cargo build --release
 ```
 
-### Running Tests
+### Running
+```bash
+# Show help
+cargo run -- --help
+
+# Preview organization (safe)
+cargo run -- organize --dry-run
+
+# Organize by file type
+cargo run -- organize ~/Downloads --dry-run
+
+# Organize by file size
+cargo run -- organize --mode size --dry-run
+```
+
+### Testing
 ```bash
 cargo test
-```
-
-### Running with Debug Output
-```bash
-RUST_LOG=debug cargo run -- organize --dry-run
 ```
 
 ## 📖 Examples
